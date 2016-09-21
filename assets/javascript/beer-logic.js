@@ -1,9 +1,9 @@
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyBCGNlsZyWEj1KbRpXx6bmUM1T_sVO9_3M",
-    authDomain: "keep-austin-beered.firebaseapp.com",
-    databaseURL: "https://keep-austin-beered.firebaseio.com",
-    storageBucket: "keep-austin-beered.appspot.com",
-    messagingSenderId: "57492481901"
+    apiKey: "AIzaSyDG2Bf_b52p4TNK2P4538aAHtnImN88CPg",
+    authDomain: "keep-austin-beerd.firebaseapp.com",
+    databaseURL: "https://keep-austin-beerd.firebaseio.com",
+    storageBucket: "keep-austin-beerd.appspot.com",
+    messagingSenderId: "639903526682"
   };
   firebase.initializeApp(config);
