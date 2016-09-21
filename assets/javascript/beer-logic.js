@@ -7,3 +7,8 @@
     messagingSenderId: "57492481901"
   };
   firebase.initializeApp(config);
+
+
+$("start").on('click', function() {
+  location.href = "beerInfo.html";
+});
