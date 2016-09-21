@@ -8,15 +8,7 @@
   };
   firebase.initializeApp(config);
 
-  var brewKey = "506bb9b48659b2737456b6f9e0966aa8";
-  var queryURL = "http://api.brewerydb.com/v2/serach?q=Goosinator&type=beer?key=";
 
-function showBeerInfo() {
-  $.ajax({url: queryURL + brewKey, method: "GET"})
-		.done(function(response){
-      console.log(response);
-
-    });
-}
-
-showBeerInfo();
+$("start").on('click', function() {
+  location.href = "beerInfo.html";
+});
