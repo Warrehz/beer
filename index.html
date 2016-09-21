@@ -4,6 +4,7 @@
     <title>Beer Group Project</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/stylesheet.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Hind:500|Lobster" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
   </head>
 
@@ -15,7 +16,7 @@
 
         <div class="navbar-header">
 
-          <a class="navbar-brand logo" href="#">LOGO</a>
+          <a class="navbar-brand" id="logo">Keep Austin Beer'd</a>
 
         </div>
 
@@ -34,21 +35,33 @@
 
       <div class="row content-area">
 
-        <div class="col-lg-6">
-          <img src="http://placehold.it/500x500">
+        <div class="col-lg-6 image-holder">
+
+          <div id="circle-container">
+
+              <div id="circle">
+
+                <img src="assets/images/beers-transparent.png" class="beer-image">
+
+              </div>
+
+          </div>
+
         </div>
 
         <div class="col-lg-6">
 
-          <h1>HEADLINE 1</h1>
+          <div class="info-area">
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="headline">
 
-          <h2>HEADLINE 2</h2>
+              <h1>CURE YOUR BEER INDECISION</h1>
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
 
-          <button class="btn start" type="button">BUTTON</button>
+          </div>
+
+          <button class="btn start" type="button">FIND YOUR BEER</button>
 
         </div>
 
