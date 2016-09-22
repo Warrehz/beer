@@ -8,7 +8,67 @@
   };
   firebase.initializeApp(config);
 
+var database = firebase.database();
 
-$("start").on('click', function() {
+
+$(".start").on('click', function() {
   location.href = "beerInfo.html";
+});
+
+var testing1 = ['testin','array'];
+var testing2 = "test";
+var testing = 5;
+
+// make a reset to clear the data and leave them empty. 
+
+var stout = database.ref("stout");
+var lager = database.ref("lager");
+var ale = database.ref("ale");
+var malt = database.ref("malt");
+
+
+stout.update({
+    nameOfBeer:{
+        flavor:testing1,
+        place:testing2,
+        price:testing
+    }
+  });
+
+lager.update({
+    nameOfBeer:{
+        flavor:testing1,
+        place:testing2,
+        price:testing
+      }
+  });
+
+ale.update({
+    nameOfBeer:{
+        flavor:testing1,
+        place:testing2,
+        price:testing
+
+    }
+  });
+
+malt.update({
+    nameOfBeer:{
+        flavor:testing1,
+        place:testing2,
+        price:testing
+
+    }
+  });
+
+// At the initial load, get a snapshot of the current data.
+stout.on("value", function(snapshot) {
+
+  var stouts = snapshot.val().stout.name; 
+
+  // Print the initial data to the console.
+  console.log(snapshot.val().stouts);
+  
+  
+  
 });
