@@ -1,3 +1,7 @@
+a:hover {
+  text-decoration: none;
+}
+
 body {
   font-family: Hind;
   font-weight: 500;
@@ -8,10 +12,21 @@ h1 {
   font-size: 72px;
   font-weight: 600;
   color: #FBFFFE;
+  line-height: 150%;
+}
+
+.logo-text {
+  text-align: center;
+  margin: 0 auto;
 }
 
 .navbar {
   background-color: #FAA916;
+}
+
+.navbar-header {
+  float: none;
+  text-align: center;
 }
 
 .beer-image {
@@ -39,13 +54,18 @@ h1 {
 }
 
 .start {
-  width: 100%;
-  padding-top: 45px;
-  padding-bottom: 45px;
-  background-color: #FBFFFE;
-  color: #FAA916;
+  width: 80%;
+  background-color: #FAA916;
+  color: #FBFFFE;
   font-size: 48px;
-  margin: 75px 0 0 50px;
+  margin: 0 0 0 85px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.start:hover {
+  background-color: #8C1C13;
+  color: #FBFFFE;
 }
 
 #circle {
@@ -60,4 +80,5 @@ h1 {
   font-family: Lobster;
   font-size: 72px;
   color: #FBFFFE;
+  margin: 0 auto;
 }
