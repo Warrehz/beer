@@ -15,6 +15,11 @@ h1 {
   line-height: 150%;
 }
 
+h2 {
+  color: #FAA916;
+  font-size: 48px;
+}
+
 .logo-text {
   text-align: center;
   margin: 0 auto;
@@ -29,8 +34,33 @@ h1 {
   text-align: center;
 }
 
+.beer-desc {
+  color: #FBFFFE;
+  font-size: 18px;
+}
+
+.beer-holder {
+  margin: 25px 0 0 0;
+}
+
 .beer-image {
   margin: 140px 0 0 35px;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 600px;
+  height: 600px;
+  background-color: #FBFFFE;
+  border: 15px solid #FAA916;
+}
+
+.circle-choice {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  background-color: #FBFFFE;
+  border: 15px solid #FAA916;
 }
 
 .headline {
@@ -40,9 +70,6 @@ h1 {
 
 .image-holder {
   margin-top: 100px;
-}
-
-.info-area {
 }
 
 .info-text {
@@ -66,14 +93,6 @@ h1 {
 .start:hover {
   background-color: #8C1C13;
   color: #FBFFFE;
-}
-
-#circle {
-  border-radius: 50%;
-  width: 600px;
-  height: 600px;
-  background-color: #FBFFFE;
-  border: 15px solid #FAA916;
 }
 
 #logo {
