@@ -12,7 +12,7 @@ var database = firebase.database();
 
 
 $(".start").on('click', function() {
-  location.href = "beerInfo.html";
+  location.href = "beerd.html";
 });
 
 var testing1 = ['testin','array'];
