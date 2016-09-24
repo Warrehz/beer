@@ -66,8 +66,6 @@ $(".start").on('click', function() {
 }); 
 
 //Jquery beerd page. Selecting 1 of 3 choices
-
-
 //Default hidden divs
 $("#aleDetails").hide();
 $("#lagerDetails").hide();
@@ -77,14 +75,14 @@ $(".submitBeer").hide();
 
 //ALE information toggling
 $("#ale-image").on('click', function() {
-  $(".lagerContainer, .stoutContainer").slideToggle(600);
+  $(".lagerContainer, .stoutContainer").slideToggle(800);
   $("#ale").fadeOut(2000);
-  $("#aleDetails").slideDown(2000, "linear"); 
+  $("#aleDetails").delay(2000).slideDown(2000, "linear"); 
   $(".aleChoice").animate({
     width: "325px",
     height: "325px",
-  }, 600);
-  $(".dynamicBtn").delay(2000).fadeIn(1500);
+  }, 800);
+  $(".dynamicBtn").delay(4000).fadeIn(2000);
   $(this).off();
 });
 
@@ -92,12 +90,12 @@ $("#ale-image").on('click', function() {
 $("#lager-image").on('click', function() {
   $(".aleContainer, .stoutContainer").slideToggle(800);
   $("#lager").fadeOut(2000);
-  $("#lagerDetails").slideDown(2000, "linear");
+  $("#lagerDetails").delay(2000).slideDown(2000, "linear");
   $(".lagerChoice").animate({
     width: "325px",
     height: "325px",
   }, 800);
-  $(".dynamicBtn").fadeIn(4000);
+  $(".dynamicBtn").delay(4000).fadeIn(2000);
   $(this).off();
 });
 
@@ -105,23 +103,27 @@ $("#lager-image").on('click', function() {
 $("#stout-image").on('click', function() {
   $(".lagerContainer, .aleContainer").slideToggle(800);
   $("#stout-porter").fadeOut(2000);
-  $("#stoutPorterDetails").slideDown(2000, "linear");
+  $("#stoutPorterDetails").delay(2000).slideDown(2000, "linear");
   $(".stoutChoice").animate({
     width: "325px",
     height: "325px",
   }, 800);
-  $(".dynamicBtn").fadeIn(4000);
+  $(".dynamicBtn").delay(4000).fadeIn(2000);
   $(this).off();
 });
 
 //recommendations/suggest button
 $("#beerPlaces").on('click', function() {
-  //yelp and maps API  and firebase call
+  //maps API  and firebase call
 })
 
 $("#suggest").on('click', function() {
   $(".submitBeer").fadeIn(2000);
   scrollTo($('.submitBeer'), 1000); 
+})
+
+$("#submitBeer").on('click', function() {
+  //push data into firebase
 })
 
 
