@@ -20,10 +20,16 @@ h2 {
   font-size: 48px;
 }
 
-.logo-text {
+h3 {
+  color: #FAA916;
+  text-align: center;
+  border-bottom: 3px solid white;
+}
+
+/*.logo-text {
   text-align: center;
   margin: 0 auto;
-}
+}*/
 
 .navbar {
   background-color: #FAA916;
@@ -34,7 +40,7 @@ h2 {
   text-align: center;
 }
 
-.beer-desc {
+.beer-desc, .submitBeer {
   color: #FBFFFE;
   font-size: 18px;
 }
