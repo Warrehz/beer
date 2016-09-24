@@ -90,26 +90,26 @@ $("#ale-image").on('click', function() {
 
 //Lager information toggling
 $("#lager-image").on('click', function() {
-  $(".aleContainer, .stoutContainer").slideToggle(600);
+  $(".aleContainer, .stoutContainer").slideToggle(800);
   $("#lager").fadeOut(2000);
   $("#lagerDetails").slideDown(2000, "linear");
   $(".lagerChoice").animate({
     width: "325px",
     height: "325px",
-  }, 600);
+  }, 800);
   $(".dynamicBtn").fadeIn(4000);
   $(this).off();
 });
 
 //Stout information toggling
 $("#stout-image").on('click', function() {
-  $(".lagerContainer, .aleContainer").slideToggle(600);
+  $(".lagerContainer, .aleContainer").slideToggle(800);
   $("#stout-porter").fadeOut(2000);
   $("#stoutPorterDetails").slideDown(2000, "linear");
   $(".stoutChoice").animate({
     width: "325px",
     height: "325px",
-  }, 600);
+  }, 800);
   $(".dynamicBtn").fadeIn(4000);
   $(this).off();
 });
@@ -120,7 +120,8 @@ $("#beerPlaces").on('click', function() {
 })
 
 $("#suggest").on('click', function() {
-  $(".submitBeer").fadeIn(2000);  
+  $(".submitBeer").fadeIn(2000);
+  scrollTo($('.submitBeer'), 1000); 
 })
 
 
