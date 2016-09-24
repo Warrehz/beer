@@ -10,11 +10,14 @@
 
 var database = firebase.database();
 
-
+//splash page button click
 $(".start").on('click', function() {
   location.href = "beerd.html";
 });
 
+
+
+//DATABASE TESTING
 var testing1 = ['testin','array'];
 var testing2 = "test";
 var testing = 5;
@@ -72,3 +75,29 @@ stout.on("value", function(snapshot) {
   
   
 });
+
+
+//Jquery beerd page. Selecting 1 of 3 choices
+
+//ALE information
+$("#ale-image").on('click', function() {
+  $(".lagerContainer").slideToggle("slow", "linear");
+  $(".stoutContainer").slideToggle("slow", "linear");
+  $(this).off();
+});
+
+//Lager information
+$("#lager-image").on('click', function() {
+  $(".aleContainer").slideToggle("slow");
+  $(".stoutContainer").slideToggle("slow");
+  $(this).off();
+});
+
+//Stout information
+$("#stout-image").on('click', function() {
+  $(".lagerContainer").slideToggle("slow");
+  $(".aleContainer").slideToggle("slow");
+  $(this).off();
+});
+
+
