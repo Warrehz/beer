@@ -122,14 +122,29 @@
           <div class="submitBeer">
             <form>
               <h3>Got a suggestion for others? Share with us</h3>
+
+              <div class="checkbox">
+                <p><label>
+                  <input type="checkbox" value="1">
+                  Ale
+                </label></p>
+                <p><label>
+                  <input type="checkbox" value="1">
+                  Lager
+                </label></p>
+                <p><label>
+                  <input type="checkbox" value="1">
+                  Stout/Porter
+                </label></p>
+              </div>
+
               <div class="form-group">
                 <label for="nameOfBeer">Name of beer</label>
-                <input type="text" class="form-control" name="beerName" placeholder="Bud Light">
-              </div>
-              <div class="form-group">
+                  <input type="text" class="form-control" name="beerName" placeholder="Bud Light">
                 <label for="place">Where can you get this beer?</label>
-                <input type="text" class="form-control" name="place" placeholder="insert watering hole here">
+                  <input type="text" class="form-control" name="place" placeholder="insert watering hole here">
               </div>
+              
               <button type="submit" id="submitBeer" class="btn btn-default">Submit</button>
             </form>
           </div>
