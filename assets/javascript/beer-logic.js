@@ -95,7 +95,7 @@ $("#lager-image").on('click', function() {
     width: "325px",
     height: "325px",
   }, 800);
-  $(".dynamicBtn").delay(4000).fadeIn(2000);
+  $(".dynamicBtn").delay(4000).fadeIn(1500);
   $(this).off();
 });
 
@@ -108,7 +108,7 @@ $("#stout-image").on('click', function() {
     width: "325px",
     height: "325px",
   }, 800);
-  $(".dynamicBtn").delay(4000).fadeIn(2000);
+  $(".dynamicBtn").delay(4000).fadeIn(1500);
   $(this).off();
 });
 
@@ -118,12 +118,24 @@ $("#beerPlaces").on('click', function() {
 })
 
 $("#suggest").on('click', function() {
-  $(".submitBeer").fadeIn(2000);
+  $(".submitBeer").fadeIn(1500);
   scrollTo($('.submitBeer'), 1000); 
 })
 
 $("#submitBeer").on('click', function() {
   //push data into firebase
 })
+
+// checkbox logic so only 1 can be selected
+$('input[type=checkbox]').change(function(){
+    if($(this).is(':checked')){
+$('input[type=checkbox]').attr('disabled',true);
+    $(this).attr('disabled','');
+    }
+    else{
+      $('input[type=checkbox]').attr('disabled','');
+    }
+});
+
 
 
