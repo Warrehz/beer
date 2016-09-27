@@ -14,15 +14,11 @@
 
       <div class="container container-fluid">
 
-        <div class="logo-text">
-
           <div class="navbar-header">
 
             <a href="index.html" id="logo">Keep Austin Beer'd</a>
 
           </div>
-
-        </div>
 
       </div>
 
@@ -30,20 +26,15 @@
 
     <div class="container">
 
-      <div class="row beer-holder">
+      <div class="row beer-holder aleContainer">
 
-          <div class="col-md-2">
-          </div>
+          <div class="col-md-2"></div>
 
            <div class="col-md-4">
 
-            <div class="circle-container">
-
-                <div class="circle-choice">
+            <div class="circle-container circle-choice aleChoice">
 
                   <img src="assets/images/ale.png" id="ale-image">
-
-                </div>
 
             </div>
 
@@ -51,86 +42,123 @@
 
           <div class="col-md-4">
 
-            <div id="ale">
-
               <h2>Ale</h2>
 
-              <p class="beer-desc">Made in many varieties, ales are typically brewed with top fermenting yeast and are fuller-bodied with a hoppy finish. </p>
+              <p class="beer-desc" id="aleDetails">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ornare urna quis eleifend aliquet. Morbi nec luctus nunc, nec malesuada justo. Proin in pretium est. Integer quam lorem, blandit id metus vitae, dapibus pharetra erat. Suspendisse sagittis non nisi ut porttitor. Vivamus scelerisque magna vel imperdiet aliquam. Sed sapien felis, mattis non turpis non, tincidunt blandit nulla. Fusce quis nibh sodales, laoreet eros ut, congue nunc. Sed tincidunt sem id ipsum feugiat mollis. Maecenas eget dolor eget orci efficitur laoreet ac vel lacus. Aenean lacus nulla, tincidunt in ipsum id, rutrum eleifend sapien.
+              </p>
 
-            </div>
+              <p class="beer-desc" id="ale">Made in many varieties, ales are typically brewed with top fermenting yeast and are fuller-bodied with a hoppy finish. </p>
+              
 
           </div>
 
       </div>
 
-      <div class="row beer-holder">
+      <div class="row beer-holder lagerContainer">
 
-        <div class="col-md-2">
-        </div>
+        <div class="col-md-2"></div>
 
         <div class="col-md-4">
 
-          <div class="circle-container">
-
-              <div class="circle-choice">
+          <div class="circle-container circle-choice lagerChoice">
 
                 <img src="assets/images/lager.png" id="lager-image">
 
-              </div>
-
           </div>
 
         </div>
 
         <div class="col-md-4">
 
-          <div id="lager">
-
             <h2>Lager</h2>
 
-            <p class="beer-desc">The world's most popular beer type, lagers are crisp, bottom-fermented brews  with a smooth finish.</p>
+            <p class="beer-desc" id="lagerDetails">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ornare urna quis eleifend aliquet. Morbi nec luctus nunc, nec malesuada justo. Proin in pretium est. Integer quam lorem, blandit id metus vitae, dapibus pharetra erat. Suspendisse sagittis non nisi ut porttitor. Vivamus scelerisque magna vel imperdiet aliquam. Sed sapien felis, mattis non turpis non, tincidunt blandit nulla. Fusce quis nibh sodales, laoreet eros ut, congue nunc. Sed tincidunt sem id ipsum feugiat mollis. Maecenas eget dolor eget orci efficitur laoreet ac vel lacus. Aenean lacus nulla, tincidunt in ipsum id, rutrum eleifend sapien.
+            </p>
 
-          </div>
+            <p class="beer-desc" id="lager">The world's most popular beer type, lagers are crisp, bottom-fermented brews  with a smooth finish.</p>
 
         </div>
 
       </div>
 
-      <div class="row beer-holder">
+      <div class="row beer-holder stoutContainer">
 
-        <div class="col-md-2">
-        </div>
+        <div class="col-md-2"></div>
 
         <div class="col-md-4">
 
-          <div class="circle-container">
-
-              <div class="circle-choice">
+          <div class="circle-container circle-choice stoutChoice">
 
                 <img src="assets/images/stout.png" id="stout-image" data-type="stout">
 
-              </div>
-
           </div>
 
         </div>
 
         <div class="col-md-4">
 
-          <div id="stout-porter">
-
             <h2>Stout &amp; Porter</h2>
 
-            <p class="beer-desc">Technically ales, stouts and porters are much darker in color and have a strong malt finishes that most relate to caramel, coffee or bittersweet chocolate</p>
+            <p class="beer-desc" id="stoutPorterDetails">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ornare urna quis eleifend aliquet. Morbi nec luctus nunc, nec malesuada justo. Proin in pretium est. Integer quam lorem, blandit id metus vitae, dapibus pharetra erat. Suspendisse sagittis non nisi ut porttitor. Vivamus scelerisque magna vel imperdiet aliquam. Sed sapien felis, mattis non turpis non, tincidunt blandit nulla. Fusce quis nibh sodales, laoreet eros ut, congue nunc. Sed tincidunt sem id ipsum feugiat mollis. Maecenas eget dolor eget orci efficitur laoreet ac vel lacus. Aenean lacus nulla, tincidunt in ipsum id, rutrum eleifend sapien.
+            </p>
 
-          </div>
+            <p class="beer-desc" id="stout-porter">Technically ales, stouts and porters are much darker in color and have a strong malt finishes that most relate to caramel, coffee or bittersweet chocolate</p>
 
         </div>
 
+      </div>
+
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <button class="btn btn-info dynamicBtn" id="beerPlaces" type="button">Recommendations</button>
+          <button class="btn btn-info dynamicBtn" id="suggest" type="button">Suggest a beer!</button>
+
+          <div class="yelp"></div>
+
+          <div class="submitBeer">
+            <form>
+              <h3>Got a suggestion for others? Share with us</h3>
+
+              <div class="checkbox">
+                <p><label>
+                  <input type="checkbox" value="1">
+                  Ale
+                </label></p>
+                <p><label>
+                  <input type="checkbox" value="1">
+                  Lager
+                </label></p>
+                <p><label>
+                  <input type="checkbox" value="1">
+                  Stout/Porter
+                </label></p>
+              </div>
+
+              <div class="form-group">
+                <label for="nameOfBeer">Name of beer</label>
+                  <input type="text" class="form-control" name="beerName" placeholder="Bud Light">
+                <label for="place">Where can you get this beer?</label>
+                  <input type="text" class="form-control" name="place" placeholder="insert watering hole here">
+              </div>
+              
+              <button type="submit" id="submitBeer" class="btn btn-default">Submit</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="map"></div>
+        </div>
       </div>
 
     </div>
 
+  <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+  <script rel="stylesheet" type="text/javascript" src="assets/javascript/beer-logic.js"></script>
   </body>
 
 
