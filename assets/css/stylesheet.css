@@ -99,7 +99,7 @@ h3 {
   transition-duration: 0.4s;
 }
 
-.start:hover {
+.start:hover, #beerPlaces:hover, #suggest:hover {
   background-color: #8C1C13;
   color: #FBFFFE;
 }
@@ -115,3 +115,11 @@ h3 {
   margin: 0 auto;
 }
 
+#beerPlaces, #suggest {
+  width:40%;
+  margin:10px;
+  background-color: #FAA916;
+  color: #FBFFFE;
+  border:none;
+
+}
