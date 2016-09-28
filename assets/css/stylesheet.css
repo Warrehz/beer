@@ -107,10 +107,10 @@ h3 {
 #ale-image, #lager-image, #stout-image {
   height: 100%;
 }
-
+/*
 #lager-image {
   margin: 0 0 0 50px;
-}
+}*/
 
 #logo {
   font-family: Lobster;
