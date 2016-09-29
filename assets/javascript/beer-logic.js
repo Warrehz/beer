@@ -79,8 +79,8 @@ $("#ale-image").on('click', function() {
   $("#ale").fadeOut(2000);
   $("#aleDetails").delay(2000).slideDown(2000, "linear"); 
   $(".aleChoice").animate({
-    width: "325px",
-    height: "325px",
+    width: "300px",
+    height: "300px",
   }, 800);
   $(".dynamicBtn").delay(4000).fadeIn(2000);
   $(this).off();
@@ -92,8 +92,8 @@ $("#lager-image").on('click', function() {
   $("#lager").fadeOut(2000);
   $("#lagerDetails").delay(2000).slideDown(2000, "linear");
   $(".lagerChoice").animate({
-    width: "325px",
-    height: "325px",
+    width: "300px",
+    height: "300px",
   }, 800);
   $(".dynamicBtn").delay(4000).fadeIn(1500);
   $(this).off();
@@ -105,8 +105,8 @@ $("#stout-image").on('click', function() {
   $("#stout-porter").fadeOut(2000);
   $("#stoutPorterDetails").delay(2000).slideDown(2000, "linear");
   $(".stoutChoice").animate({
-    width: "325px",
-    height: "325px",
+    width: "300px",
+    height: "300px",
   }, 800);
   $(".dynamicBtn").delay(4000).fadeIn(1500);
   $(this).off();
@@ -114,7 +114,7 @@ $("#stout-image").on('click', function() {
 
 //recommendations/suggest button
 $("#beerPlaces").on('click', function() {
-  //maps API  and firebase call
+  geocode();
 })
 
 $("#suggest").on('click', function() {
@@ -136,6 +136,47 @@ $('input[type=checkbox]').attr('disabled',true);
       $('input[type=checkbox]').attr('disabled','');
     }
 });
+
+//Google maps and geocode js
+function geocode() {
+
+  $("#map").html("Here are some recommendations you will enjoy!");
+
+  var place = "epoch cafe";
+  var googleKey = 'AIzaSyDpiSst7DH-vZ6KpzpN-JxdL3AmflozaIo';
+  // Google API to get lat/lng
+  queryURL = "https://maps.googleapis.com/maps/api/geocode/json?address="+place+"&key="+googleKey;
+
+    $.ajax({
+    url: queryURL,
+    method: 'GET'
+
+    }).done(function(response) {
+
+    console.log(response);
+
+    placeID = response.results[0].place_id;
+    console.log(placeID);
+
+    //Lattitude and Longitude of place
+    lat = response.results[0].geometry.location.lat;
+    lng = response.results[0].geometry.location.lng;
+
+    printMap();
+
+  }); /*End of googl ajax call*/
+
+}/*End of geocode function*/
+
+
+function printMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+  center: {lat: lat, lng: lng},
+  zoom: 12
+  });
+}
+
+window.map = printMap;
 
 
 
