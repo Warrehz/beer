@@ -60,6 +60,7 @@
   
 // });
 
+//self invoking function, ensulating code and cleaning up variable scoping
 var beerd = (function () {
 $(function() {
 
@@ -138,7 +139,7 @@ $('input[type=checkbox]').attr('disabled',true);
 });
 
 //Google maps and geocode js
-var place = "sprouts";
+var place = " 5353 Burnet Rd, Austin, TX 78756";
 var lat = 0;
 var lng = 0;
 
@@ -175,10 +176,10 @@ function geocode() {
 
 function placesMap() {
   var myLatLng = {lat: lat, lng: lng}
-  var mapSection = document.getElementById("maps");
+  var mapSection = document.getElementById("mapArea");
   var mapDisplay = {
     center: new google.maps.LatLng(lat, lng),
-    zoom: 15
+    zoom: 16
   }
 
   var maps = new google.maps.Map(mapSection, mapDisplay);
