@@ -124,3 +124,9 @@ h3 {
   border:none;
 
 }
+
+#maps {
+  width: 40%;
+  height: 400px;
+  float: left;
+}

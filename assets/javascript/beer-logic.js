@@ -60,6 +60,9 @@
   
 // });
 
+var beerd = (function () {
+$(function() {
+
 //splash page button click
 $(".start").on('click', function() {
   location.href = "beerd.html";
@@ -67,11 +70,7 @@ $(".start").on('click', function() {
 
 //Jquery beerd page. Selecting 1 of 3 choices
 //Default hidden divs
-$("#aleDetails").hide();
-$("#lagerDetails").hide();
-$("#stoutPorterDetails").hide();
-$(".dynamicBtn").hide();
-$(".submitBeer").hide();
+$("#aleDetails, #lagerDetails, #stoutPorterDetails, .dynamicBtn, .submitBeer, #maps").hide();
 
 //ALE information toggling
 $("#ale-image").on('click', function() {
@@ -114,6 +113,7 @@ $("#stout-image").on('click', function() {
 
 //recommendations/suggest button
 $("#beerPlaces").on('click', function() {
+  $("#maps").show();
   geocode();
 })
 
@@ -138,11 +138,13 @@ $('input[type=checkbox]').attr('disabled',true);
 });
 
 //Google maps and geocode js
+var place = "sprouts";
+var lat = 0;
+var lng = 0;
+
 function geocode() {
 
-  $("#map").html("Here are some recommendations you will enjoy!");
 
-  var place = "epoch cafe";
   var googleKey = 'AIzaSyDpiSst7DH-vZ6KpzpN-JxdL3AmflozaIo';
   // Google API to get lat/lng
   queryURL = "https://maps.googleapis.com/maps/api/geocode/json?address="+place+"&key="+googleKey;
@@ -155,28 +157,45 @@ function geocode() {
 
     console.log(response);
 
-    placeID = response.results[0].place_id;
-    console.log(placeID);
+    // placeID = response.results[0].place_id;
+    // console.log(placeID);
 
     //Lattitude and Longitude of place
     lat = response.results[0].geometry.location.lat;
     lng = response.results[0].geometry.location.lng;
+    console.log(lat);
+    console.log(lng);
 
-    printMap();
+    placesMap();
 
   }); /*End of googl ajax call*/
 
 }/*End of geocode function*/
 
 
-function printMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-  center: {lat: lat, lng: lng},
-  zoom: 12
-  });
+function placesMap() {
+  var myLatLng = {lat: lat, lng: lng}
+  var mapSection = document.getElementById("maps");
+  var mapDisplay = {
+    center: new google.maps.LatLng(lat, lng),
+    zoom: 15
+  }
+
+  var maps = new google.maps.Map(mapSection, mapDisplay);
+
+  var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: maps,
+        });
+
+  
 }
 
-window.map = printMap;
+window.map = placesMap;
+
+});
+
+})();
 
 
 
