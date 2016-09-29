@@ -79,8 +79,8 @@ $("#ale-image").on('click', function() {
   $("#ale").fadeOut(2000);
   $("#aleDetails").delay(2000).slideDown(2000, "linear"); 
   $(".aleChoice").animate({
-    width: "325px",
-    height: "325px",
+    width: "300px",
+    height: "300px",
   }, 800);
   $(".dynamicBtn").delay(4000).fadeIn(2000);
   $(this).off();
@@ -92,8 +92,8 @@ $("#lager-image").on('click', function() {
   $("#lager").fadeOut(2000);
   $("#lagerDetails").delay(2000).slideDown(2000, "linear");
   $(".lagerChoice").animate({
-    width: "325px",
-    height: "325px",
+    width: "300px",
+    height: "300px",
   }, 800);
   $(".dynamicBtn").delay(4000).fadeIn(1500);
   $(this).off();
@@ -105,8 +105,8 @@ $("#stout-image").on('click', function() {
   $("#stout-porter").fadeOut(2000);
   $("#stoutPorterDetails").delay(2000).slideDown(2000, "linear");
   $(".stoutChoice").animate({
-    width: "325px",
-    height: "325px",
+    width: "300px",
+    height: "300px",
   }, 800);
   $(".dynamicBtn").delay(4000).fadeIn(1500);
   $(this).off();
