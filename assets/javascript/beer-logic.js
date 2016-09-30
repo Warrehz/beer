@@ -115,12 +115,14 @@ $("#stout-image").on('click', function() {
 //recommendations/suggest button
 $("#beerPlaces").on('click', function() {
   $("#maps").show();
+  $(".submitBeer").hide();
   geocode();
 })
 
 $("#suggest").on('click', function() {
   $(".submitBeer").fadeIn(1500);
   scrollTo($('.submitBeer'), 1000); 
+  $("#maps").hide();
 })
 
 $("#submitBeer").on('click', function() {
