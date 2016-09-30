@@ -95,10 +95,15 @@ $("#stout-image").on('click', function() {
 });
 
 //recommendations/suggest button
-$("#beerPlaces").on('click', function() {
-  $("#maps").show();
-  $(".submitBeer").hide();
-  geocode();
+// $("#beerPlaces").on('click', function() {
+//   $("#maps").show();
+//   $(".submitBeer").hide();
+//   geocode();
+// })
+
+// reloads beer.html
+$("#reset").on('click',function(){
+  location.reload();
 })
 
 $("#suggest").on('click', function() {
