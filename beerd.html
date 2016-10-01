@@ -123,24 +123,20 @@
         <div class="col-md-6" id="placeList">
           <h3>Some beers at places you will enjoy!</h3>
           <p><h4 id="places"></h4></p>
-
         </div>
         <div class="col-md-6">
           <div id=mapArea></div>
         </div>
       </div><!-- end of row -->
-      <div class="row">
-       <!--  <div class="col-md-3"></div> -->
 
+      <div class="row">
         <div class="col-sm-12 col-md-6">
 
           <button class="btn btn-info dynamicBtn" id="reset" type="button">Not your style?</button>
 
           <button class="btn btn-info dynamicBtn" id="suggest" type="button">Suggest a beer!</button>
 
-          <div class="yelp"></div>
-
-          <div class="submitBeer">
+          <div id="beerForm">
             <form>
               <h3>Got a suggestion for others? Share with us</h3>
 
@@ -161,17 +157,19 @@
 
               <div class="form-group">
                 <label for="nameOfBeer">Name of beer</label>
-                  <input type="text" class="form-control" name="beerName" placeholder="Bud Light">
+                  <input type="text" class="form-control" id="beerName" placeholder="Bud Light">
                 <label for="place">Where can you get this beer?</label>
-                  <input type="text" class="form-control" name="place" placeholder="insert watering hole here">
+                  <input type="text" class="form-control" id="beerPlace" placeholder="insert watering hole here">
+                <label for="address">Address</label>
+                  <input type="text" class="form-control" id="beerPlaceAddress" placeholder="where is it?">
               </div>
 
               <button type="submit" id="submitBeer" class="btn btn-default">Submit</button>
             </form>
           </div>
-        </div>
-        <!-- <div class="col-md-3"></div> -->
-      </div> 
+
+        </div> <!-- end of column -->
+      </div> <!-- end of row -->
     </div> <!-- end of container -->
 
   <script src="https://code.jquery.com/jquery-2.2.3.js"></script>

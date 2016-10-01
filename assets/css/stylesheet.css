@@ -40,7 +40,7 @@ h3 {
   text-align: center;
 }
 
-.beer-desc, .submitBeer, #placeList {
+.beer-desc, #beerForm, #placeList {
   color: #FBFFFE;
   font-size: 18px;
 }
