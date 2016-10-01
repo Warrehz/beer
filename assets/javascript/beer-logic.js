@@ -42,14 +42,6 @@ $(document).ready(function () {
 
 });
 
-var newBeer = {
-  type: "stout",
-  name: "Russian Imperial Stout",
-  locationName: "Moontower Saloon",
-  locationAddress: "10212 Manchaca Rd, Austin, TX 78748"
-};
-
-database.ref().push(newBeer);
 
 //self invoking function, ensulating code and cleaning up variable scoping
 var beerd = (function () {
@@ -62,7 +54,7 @@ $(".start").on('click', function() {
 
 //Jquery beerd page. Selecting 1 of 3 choices
 //Default hidden divs
-$("#aleDetails, #lagerDetails, #stoutPorterDetails, .dynamicBtn, .submitBeer, #maps").hide();
+$("#aleDetails, #lagerDetails, #stoutPorterDetails, .dynamicBtn, .submitBeer").hide();
 
 //ALE information toggling
 $("#ale-image").on('click', function() {
@@ -75,6 +67,21 @@ $("#ale-image").on('click', function() {
   }, 800);
   $(".dynamicBtn").delay(4000).fadeIn(2000);
   $(this).off();
+
+  database.ref().orderByChild("type").equalTo("ale").on("value", function(snapshot) {
+
+    snapshot.forEach(function(childSnapshot) {
+
+      var showBeerName = childSnapshot.val().name;
+      var showBeerLocation = childSnapshot.val().locationName;
+      var showBeerAddress = childSnapshot.val().locationAddress;
+
+      $("#places").append("<p><h4>" + showBeerLocation + "</h4></p>");
+
+    });
+
+  });
+
 });
 
 //Lager information toggling
@@ -88,6 +95,21 @@ $("#lager-image").on('click', function() {
   }, 800);
   $(".dynamicBtn").delay(4000).fadeIn(1500);
   $(this).off();
+
+  database.ref().orderByChild("type").equalTo("lager").on("value", function(snapshot) {
+
+    snapshot.forEach(function(childSnapshot) {
+
+      var showBeerName = childSnapshot.val().name;
+      var showBeerLocation = childSnapshot.val().locationName;
+      var showBeerAddress = childSnapshot.val().locationAddress;
+
+      $("#places").append("<p><h4>" + showBeerLocation + "</h4></p>");
+
+    });
+
+  });
+
 });
 
 //Stout information toggling
@@ -101,6 +123,21 @@ $("#stout-image").on('click', function() {
   }, 800);
   $(".dynamicBtn").delay(4000).fadeIn(1500);
   $(this).off();
+
+  database.ref().orderByChild("type").equalTo("stout/porter").on("value", function(snapshot) {
+
+    snapshot.forEach(function(childSnapshot) {
+
+      var showBeerName = childSnapshot.val().name;
+      var showBeerLocation = childSnapshot.val().locationName;
+      var showBeerAddress = childSnapshot.val().locationAddress;
+
+      $("#places").append("<p><h4>" + showBeerLocation + "</h4></p>");
+
+    });
+
+  });
+
 });
 
 //recommendations/suggest button
