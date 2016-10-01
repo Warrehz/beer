@@ -13,9 +13,6 @@
 
 $(function() {
 
-  //variable used to grab snapshot value 
-  var place = "";
-
 //splash page button click
   $(".start").on('click', function() {
     location.href = "beerd.html";
