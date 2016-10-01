@@ -116,7 +116,7 @@ h3 {
   margin: 0 auto;
 }
 
-#beerPlaces, #suggest {
+#reset, #suggest {
   width:40%;
   margin:10px;
   background-color: #FAA916;
