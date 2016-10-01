@@ -27,8 +27,15 @@ h3 {
   border-bottom: 3px solid white;
 }
 
-#places {
-  line-height: 4;
+h4 {
+  color: #FAA916;
+  text-align: center;
+  font-size: 30px;
+}
+
+#places, #navContainer {
+  text-align: center;
+  line-height: 1.5;
 }
 
 .navbar {
@@ -71,7 +78,7 @@ h3 {
   transition-duration: 1s;
 }
 
-.circle-choice:hover {
+.circle-choice:hover, .start:hover, #beerPlaces:hover, .dynamicBtn:hover, .listings:hover {
   background-color: #8C1C13;
   color: #FBFFFE;
   cursor: pointer;
@@ -104,11 +111,6 @@ h3 {
   transition-duration: 0.4s;
 }
 
-.start:hover, #beerPlaces:hover, #suggest:hover {
-  background-color: #8C1C13;
-  color: #FBFFFE;
-}
-
 #ale-image, #lager-image, #stout-image {
   height: 100%;
 }
@@ -120,16 +122,19 @@ h3 {
   margin: 0 auto;
 }
 
-#reset, #suggest {
+.dynamicBtn, .listings {
   width:40%;
   margin:10px;
   background-color: #FAA916;
   color: #FBFFFE;
   border:none;
-
+  border-radius: 4px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
 }
 
 #mapArea {
+  margin-top: 50px;
   width: 100%;
   height: 400px;
   float: right;
