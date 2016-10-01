@@ -42,6 +42,15 @@ $(document).ready(function () {
 
 });
 
+var newBeer = {
+  type: "stout",
+  name: "Russian Imperial Stout",
+  locationName: "Moontower Saloon",
+  locationAddress: "10212 Manchaca Rd, Austin, TX 78748"
+};
+
+database.ref().push(newBeer);
+
 //self invoking function, ensulating code and cleaning up variable scoping
 var beerd = (function () {
 $(function() {
