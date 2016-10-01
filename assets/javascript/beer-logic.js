@@ -54,7 +54,7 @@ $(".start").on('click', function() {
 
 //Jquery beerd page. Selecting 1 of 3 choices
 //Default hidden divs
-$("#aleDetails, #lagerDetails, #stoutPorterDetails, .dynamicBtn, .submitBeer").hide();
+$("#aleDetails, #lagerDetails, #stoutPorterDetails, .dynamicBtn, .submitBeer, #placeList, #mapArea").hide();
 
 //ALE information toggling
 $("#ale-image").on('click', function() {
@@ -65,7 +65,7 @@ $("#ale-image").on('click', function() {
     width: "300px",
     height: "300px",
   }, 800);
-  $(".dynamicBtn").delay(4000).fadeIn(2000);
+  $(".dynamicBtn, #placeList").delay(4000).fadeIn(2000);
   $(this).off();
 
   database.ref().orderByChild("type").equalTo("ale").on("value", function(snapshot) {
@@ -76,7 +76,7 @@ $("#ale-image").on('click', function() {
       var showBeerLocation = childSnapshot.val().locationName;
       var showBeerAddress = childSnapshot.val().locationAddress;
 
-      $("#places").append("<p><h4>" + showBeerLocation + "</h4></p>");
+      $("#places").append("<p>" + showBeerLocation + ": " + showBeerName + "</p>");
 
     });
 
@@ -93,7 +93,7 @@ $("#lager-image").on('click', function() {
     width: "300px",
     height: "300px",
   }, 800);
-  $(".dynamicBtn").delay(4000).fadeIn(1500);
+  $(".dynamicBtn, #placeList").delay(4000).fadeIn(1500);
   $(this).off();
 
   database.ref().orderByChild("type").equalTo("lager").on("value", function(snapshot) {
@@ -104,7 +104,7 @@ $("#lager-image").on('click', function() {
       var showBeerLocation = childSnapshot.val().locationName;
       var showBeerAddress = childSnapshot.val().locationAddress;
 
-      $("#places").append("<p><h4>" + showBeerLocation + "</h4></p>");
+      $("#places").append("<p>" + showBeerLocation + ": " + showBeerName + "</p>");
 
     });
 
@@ -121,7 +121,7 @@ $("#stout-image").on('click', function() {
     width: "300px",
     height: "300px",
   }, 800);
-  $(".dynamicBtn").delay(4000).fadeIn(1500);
+  $(".dynamicBtn, #placeList").delay(4000).fadeIn(1500);
   $(this).off();
 
   database.ref().orderByChild("type").equalTo("stout/porter").on("value", function(snapshot) {
@@ -132,20 +132,13 @@ $("#stout-image").on('click', function() {
       var showBeerLocation = childSnapshot.val().locationName;
       var showBeerAddress = childSnapshot.val().locationAddress;
 
-      $("#places").append("<p><h4>" + showBeerLocation + "</h4></p>");
+      $("#places").append("<p>" + showBeerLocation + ": " + showBeerName + "</p>");;
 
     });
 
   });
 
 });
-
-//recommendations/suggest button
-// $("#beerPlaces").on('click', function() {
-//   $("#maps").show();
-//   $(".submitBeer").hide();
-//   geocode();
-// })
 
 // reloads beer.html
 $("#reset").on('click',function(){
@@ -155,23 +148,19 @@ $("#reset").on('click',function(){
 $("#suggest").on('click', function() {
   $(".submitBeer").fadeIn(1500);
   scrollTo($('.submitBeer'), 1000);
-  $("#maps").hide();
 })
 
-$("#submitBeer").on('click', function() {
-  //push data into firebase
-})
 
-// checkbox logic so only 1 can be selected
-$('input[type=checkbox]').change(function(){
-    if($(this).is(':checked')){
-$('input[type=checkbox]').attr('disabled',true);
-    $(this).attr('disabled','');
-    }
-    else{
-      $('input[type=checkbox]').attr('disabled','');
-    }
-});
+// // checkbox logic so only 1 can be selected
+// $('input[type=checkbox]').change(function(){
+//     if($(this).is(':checked')){
+// $('input[type=checkbox]').attr('disabled',true);
+//     $(this).attr('disabled','');
+//     }
+//     else{
+//       $('input[type=checkbox]').attr('disabled','');
+//     }
+// });
 
 //Google maps and geocode js
 var place = " 5353 Burnet Rd, Austin, TX 78756";
