@@ -13,6 +13,9 @@
 
 $(function() {
 
+  //variable used to grab snapshot value 
+  var place = "";
+
 //splash page button click
   $(".start").on('click', function() {
     location.href = "beerd.html";
@@ -21,7 +24,7 @@ $(function() {
   //3 separate sections dynamically controlled
   //Default hidden divs
   $("#aleDetails, #lagerDetails, #stoutPorterDetails, .dynamicBtn, #beerForm, #placeList, #mapArea").hide();
-
+  
   //ALE information toggling
   $("#ale-image").on('click', function() {
 
@@ -42,9 +45,17 @@ $(function() {
         var showBeerName = childSnapshot.val().name;
         var showBeerLocation = childSnapshot.val().locationName;
         var showBeerAddress = childSnapshot.val().locationAddress;
+        console.log(showBeerAddress);
 
-        $("#places").append("<p>" + showBeerLocation + ": " + showBeerName + "</p>");
-
+        //dynamically generating buttons with attr for address to use in gmaps
+        var a = $('<button>');
+        a.addClass('listings');
+        a.attr('data-place', showBeerAddress);
+        a.text(showBeerLocation); 
+        $('#places').append(a); 
+        $('#places').append("<p>You should try their: "+ showBeerName + "</p>" +
+                            "<p>Address: " + showBeerAddress + "</p>");
+      
       });
 
     });
@@ -72,8 +83,14 @@ $(function() {
         var showBeerLocation = childSnapshot.val().locationName;
         var showBeerAddress = childSnapshot.val().locationAddress;
 
-        $("#places").append("<p>" + showBeerLocation + ": " + showBeerName + "</p>");
-
+        //dynamically generating buttons with attr for address to use in gmaps
+        var a = $('<button>');
+        a.addClass('listings');
+        a.attr('data-place', showBeerAddress);
+        a.text(showBeerLocation); 
+        $('#places').append(a); 
+        $('#places').append("<p>You should try their: "+ showBeerName + "</p>" +
+                            "<p>Address: " + showBeerAddress + "</p>");
       });
 
     });
@@ -101,7 +118,14 @@ $(function() {
         var showBeerLocation = childSnapshot.val().locationName;
         var showBeerAddress = childSnapshot.val().locationAddress;
 
-        $("#places").append("<p>" + showBeerLocation + ": " + showBeerName + "</p>");
+        //dynamically generating buttons with attr for address to use in gmaps
+        var a = $('<button>');
+        a.addClass('listings');
+        a.attr('data-place', showBeerAddress);
+        a.text(showBeerLocation); 
+        $('#places').append(a); 
+        $('#places').append("<p>You should try their: "+ showBeerName + "</p>" +
+                            "<p>Address: " + showBeerAddress + "</p>");
 
       });
 
@@ -120,14 +144,12 @@ $(function() {
     scrollTo($('#beerForm'), 1000);
   })
 
+  //submit button pushes form data to firebase
   $("#submitBeer").on("click", function() {
 
     var beerType = checkbox;
-
     var beerName = $("#beerName").val().trim();
-
     var beerPlace = $("#beerPlace").val().trim();
-
     var beerPlaceAddress = $("#beerPlaceAddress").val().trim();
 
     console.log(beerType);
@@ -145,7 +167,7 @@ $(function() {
 
     $("#beerName").val("");
     $("#beerPlace").val("");
-    $("#beerForm").html("<h4>Thanks for sharing!</h4>")
+    $("#beerForm").html("<h4>---- Thanks for sharing! ----</h4>")
 
     return false;
 
@@ -163,28 +185,33 @@ $(function() {
            checkbox = $(this).val();
   });
 
-//Google maps and geocode js
+//Google maps and geocode js and on click to display map
+  
   var lat = 0;
   var lng = 0;
+  var listingAddress;
+
+  // $("#places").on("click", function() {
+  $("#places").on("click", ".listings" , function() {
+    $("#mapArea").show();
+
+    listingAddress = $(this).attr('data-place');
+    console.log(listingAddress);
+
+    geocode();
+  });
 
   function geocode() {
 
-    var place = showBeerAddress;
-
     var googleKey = 'AIzaSyDpiSst7DH-vZ6KpzpN-JxdL3AmflozaIo';
     // Google API to get lat/lng
-    queryURL = "https://maps.googleapis.com/maps/api/geocode/json?address="+place+"&key="+googleKey;
+    queryURL = "https://maps.googleapis.com/maps/api/geocode/json?address="+listingAddress+"&key="+googleKey;
 
       $.ajax({
       url: queryURL,
       method: 'GET'
 
       }).done(function(response) {
-
-      console.log(response);
-
-      // placeID = response.results[0].place_id;
-      // console.log(placeID);
 
       //Lattitude and Longitude of place
       lat = response.results[0].geometry.location.lat;
@@ -198,19 +225,22 @@ $(function() {
 
   }/*End of geocode function*/
 
+  //displaying map from the lat and long values found from geocode
   function placesMap() {
+
     var myLatLng = {lat: lat, lng: lng}
     var mapSection = document.getElementById("mapArea");
     var mapDisplay = {
       center: new google.maps.LatLng(lat, lng),
-      zoom: 16
+      zoom: 17
     }
 
     var maps = new google.maps.Map(mapSection, mapDisplay);
 
+    //creates marker on map using lat and long
     var marker = new google.maps.Marker({
             position: myLatLng,
-            map: maps,
+            map: maps
           });
   }
 //for google maps callback function reference  
