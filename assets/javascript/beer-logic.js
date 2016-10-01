@@ -44,7 +44,7 @@ $(document).ready(function () {
 
 
 //self invoking function, ensulating code and cleaning up variable scoping
-var beerd = (function () {
+// var beerd = (function () {
 $(function() {
 
 //splash page button click
@@ -151,16 +151,15 @@ $("#suggest").on('click', function() {
 })
 
 
-// // checkbox logic so only 1 can be selected
-// $('input[type=checkbox]').change(function(){
-//     if($(this).is(':checked')){
-// $('input[type=checkbox]').attr('disabled',true);
-//     $(this).attr('disabled','');
-//     }
-//     else{
-//       $('input[type=checkbox]').attr('disabled','');
-//     }
-// });
+// checkbox logic so only 1 can be selected
+$('input[type=checkbox]').change(function(){
+
+  if($('input.beerbox').filter(':checked').length == 1)
+        $('input.beerbox:not(:checked)').attr('disabled', 'disabled');
+    else
+        $(this).removeAttr('disabled');
+    console.log($(this).val());
+});
 
 //Google maps and geocode js
 var place = " 5353 Burnet Rd, Austin, TX 78756";
@@ -220,4 +219,4 @@ window.map = placesMap;
 
 });
 
-})();
+// })();
